@@ -7,10 +7,15 @@ ORDER BY `anno`; <br>
 
 ### 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-SELECT `office_address`, COUNT(\*) AS `num_insegnanti`
-FROM `teachers`
-GROUP BY `office_address`
-HAVING `num_insegnanti` > 1;
+SELECT `office_address`, COUNT(\*) AS `num_insegnanti` <br>
+FROM `teachers` <br>
+GROUP BY `office_address` <br>
+HAVING `num_insegnanti` > 1; <br>
 
-3. Calcolare la media dei voti di ogni appello d'esame
+### 3. Calcolare la media dei voti di ogni appello d'esame
+
+SELECT `exam_id` , AVG(`vote`) AS `media_voti` <br>
+FROM `exam_student` <br>
+GROUP BY `exam_id`; <br>
+
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
