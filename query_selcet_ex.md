@@ -1,40 +1,45 @@
-1. Selezionare tutti gli studenti nati nel 1990 (160)
+### 1. Selezionare tutti gli studenti nati nel 1990 (160)
 
-SELECT \*
-FROM `students`
-WHERE YEAR(`date_of_birth`) = '1990';
+SELECT \* <br>
+FROM `students` <br>
+WHERE YEAR(`date_of_birth`) = '1990'; <br>
 
-2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
+### 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
 
-SELECT \*
-FROM `courses`
-WHERE `cfu`> '10'
+SELECT \* <br>
+FROM `courses` <br>
+WHERE `cfu`> '10'; <br>
 
-3. Selezionare tutti gli studenti che hanno più di 30 anni
+### 3. Selezionare tutti gli studenti che hanno più di 30 anni
 
-4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
+SELECT \* <br>
+FROM `students` <br>
+WHERE YEAR('2023-12-12') - YEAR(`date_of_birth`) > 30; <br>
 
-SELECT \*
-FROM `courses`
-WHERE `year`= 1 AND `period` = 'I semestre';
+### 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 
-5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21)
+SELECT \* <br>
+FROM `courses` <br>
+WHERE `year`= 1 AND `period` = 'I semestre'; <br>
 
-SELECT \*
-FROM `exams`
-WHERE `date` = '2020/06/20' AND `hour`> '14:00';
+### 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21)
 
-6. Selezionare tutti i corsi di laurea magistrale (38)
-   SELECT \*
-   FROM `degrees`
-   WHERE `level`= 'magistrale';
+SELECT \* <br>
+FROM `exams` <br>
+WHERE `date` = '2020/06/20' AND `hour`> '14:00'; <br>
 
-7. Da quanti dipartimenti è composta l'università? (12)
+### 6. Selezionare tutti i corsi di laurea magistrale (38)
 
-SELECT COUNT(`id`)
-AS `numero_dipartimenti` FROM `departments`;
+SELECT \* <br>
+FROM `degrees` <br>
+WHERE `level`= 'magistrale'; <br>
 
-8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+### 7. Da quanti dipartimenti è composta l'università? (12)
 
-SELECT COUNT(`phone`)
+SELECT COUNT(`id`) <br>
+AS `numero_dipartimenti` FROM `departments`; <br>
+
+### 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+
+SELECT COUNT(`phone`) <br>
 AS `insegnanti_con_numero_di_telefono` FROM `teachers` ;
