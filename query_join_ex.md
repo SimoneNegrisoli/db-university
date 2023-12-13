@@ -8,7 +8,7 @@ WHERE `degrees`.`name` = 'Corso di Laurea in Economia'
 
 ### 2. Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
 
-SELECT \*
+SELECT `departments`.`name` AS `dipartimento`, `degrees`.`name` AS `corso_di_laurea`, `degrees`.`level` AS `classe_di_studi`
 FROM `degrees`
 JOIN `departments`
 ON `departments`.`id` = `degrees`.`department_id`
